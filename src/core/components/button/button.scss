@@ -1,0 +1,106 @@
+@import 'core.scss';
+
+.button {
+  @include flex(center, center);
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &-theme--primary {
+    height: 5rem;
+    width: 20rem;
+    padding: 0 1.9rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background: #ff825c;
+    border: none;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+  }
+  &-theme--secondary {
+    height: 3.6rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $blue;
+    background: $light-blue;
+    border: none;
+    border-radius: 8px;
+  }
+
+  &-theme--buy {
+    height: 4rem;
+    width: 13rem;
+    padding: 0 1.9rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background: #ff825c;
+    border: none;
+    border-radius: 15px;
+    letter-spacing: 0.05em;
+    transition: 0.4s;
+
+    &:active {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.animated {
+  background: #ff825c;
+  padding: 7px 12px;
+  color: #f7f1f1;
+  border: none;
+  animation-name: flash;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(0, 0, 0.7, 0.94);
+  animation-iteration-count: infinite;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0, 0, 0.68, 0.99);
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-duration: 2s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+//Firefox 1+
+@-webkit-keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+//Safari 3-4
+@-moz-keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

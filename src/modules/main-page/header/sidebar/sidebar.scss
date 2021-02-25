@@ -1,0 +1,79 @@
+@import 'core.scss';
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+  width: 100vw;
+  z-index: 111;
+  background: rgba(#000, 0.6);
+  opacity: 0%;
+  height: 100vh;
+  visibility: hidden;
+
+  &__active {
+    opacity: 100%;
+
+    visibility: visible;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  z-index: 112;
+  top: 0;
+  right: -30rem;
+  height: 100vh;
+  background-color: #fff;
+  width: 30rem;
+  transition: 0.5s ease-in-out;
+
+  &__active {
+    right: 0;
+  }
+
+  &__burger {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+  }
+}
+
+.burger {
+  @include flex(space-between, center, column);
+  z-index: 1000;
+  width: 5rem;
+  padding: 0.8rem 0.4rem;
+  height: 4rem;
+  background-color: #faf7f3;
+  border-radius: 5px;
+
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
+
+  &__label {
+    border-radius: 4px;
+    width: 90%;
+    height: 0.3rem;
+    background-color: #ff825c;
+  }
+}
+
+.container {
+  @include flex(space-between, initial, column);
+  height: 100vh;
+}
+
+.nav {
+  @include flex(center, flex-start, column);
+  padding: 5rem 3rem 0;
+
+  &__item {
+    display: block;
+    margin: 1rem 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+}

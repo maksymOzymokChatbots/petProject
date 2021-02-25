@@ -1,0 +1,12 @@
+#!/bin/bash
+prev_packagejson="$(git show $GIT_PREVIOUS_SUCCESSFUL_COMMIT:package.json)"
+raw_pre_ver="$(jq .version <<< $prev_packagejson)"
+prev_ver="$(sed -e 's/^"//' -e 's/"$//' <<< $raw_pre_ver)"
+raw_current_ver="$(jq .version package.json)"
+current_ver="$(sed -e 's/^"//' -e 's/"$//' <<< $raw_current_ver)"
+result=$(bash ./scripts/semver "$current_ver" "$prev_ver")
+if [ $result -eq 1 ]; then
+    echo $current_ver
+else
+    exit 1
+fi

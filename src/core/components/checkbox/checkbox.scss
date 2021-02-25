@@ -1,0 +1,44 @@
+@import 'core.scss';
+
+.box {
+  @include size(1.6rem);
+  position: relative;
+  margin-right: 0.8rem;
+  background: #ffffff;
+  border: 2px solid $grey;
+  border-radius: 0.4rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.label {
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: -0.2rem;
+  left: 0.3rem;
+  width: 0.6rem;
+  height: 1.2rem;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: rotate(45deg);
+}
+
+.checkbox {
+  @include flex(flex-start, center);
+  &--active {
+    .box {
+      background: $blue;
+      border-color: $blue;
+    }
+
+    .checkmark {
+      display: block;
+    }
+  }
+}

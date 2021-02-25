@@ -1,0 +1,29 @@
+@import 'core.scss';
+
+.category {
+  margin-bottom: 2rem;
+
+  &__name {
+    font-size: 2.2rem;
+    color: #7f7f7f;
+    text-align: center;
+    position: relative;
+  }
+
+  &__name::after {
+    content: '';
+    background-color: #9f9f9f;
+    width: 80%;
+    position: absolute;
+    left: 10%;
+    top: 3.5rem;
+    height: 0.1rem;
+  }
+}
+
+.products {
+  white-space: nowrap;
+  overflow-x: scroll;
+
+  scroll-behavior: smooth;
+}

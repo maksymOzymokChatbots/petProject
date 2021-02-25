@@ -1,0 +1,115 @@
+@import 'core.scss';
+
+.header {
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.row {
+  @include flex(space-between, center);
+  position: fixed;
+  z-index: 110;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: #ffff;
+  border-bottom: 1px solid #afafaf;
+}
+
+.menu {
+  @include flex(initial, center);
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.logo {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+
+  &__preview {
+    font-size: 1.8rem;
+    color: #ff825c;
+    font-weight: 800;
+  }
+
+  &__name {
+    font-size: 1.8rem;
+  }
+}
+
+.choose {
+  margin: 0 auto;
+}
+
+.content {
+  margin-top: 20rem;
+
+  &__gif {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    z-index: -1;
+  }
+
+  &__header {
+    text-align: right;
+    top: -9.5rem;
+    font-size: 2.7rem;
+    line-height: 1.4;
+    padding-left: 3rem;
+    padding-right: 2.5rem;
+    position: absolute;
+
+    span {
+      font-weight: 600;
+      color: #ff825c;
+    }
+  }
+
+  &__caption {
+    display: block;
+    font-size: 2.3rem;
+    padding-top: 2rem;
+    height: 20rem;
+
+    padding-right: 2rem;
+    line-height: 1.4;
+
+    background-color: #ffff;
+
+    span {
+      font-weight: 600;
+      color: #ff825c;
+    }
+  }
+}
+
+.link {
+  margin: 0.25rem 2rem;
+
+  @media only screen and (max-width: 768px) {
+    margin: 1.25rem 2rem;
+  }
+
+  &__item {
+    font-size: 1.6rem;
+    color: #000000;
+    transition: color 0.2s ease-in;
+  }
+}
+
+.desktop {
+}

@@ -1,0 +1,47 @@
+@import 'core.scss';
+
+.footer {
+  margin-top: 10rem;
+  height: 35rem;
+  background: rgb(251, 124, 86);
+  background: rgb(251, 124, 86);
+  background: linear-gradient(
+    0deg,
+    rgba(251, 124, 86, 1) 0%,
+    rgba(253, 186, 165, 1) 35%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.icons {
+  padding: 10rem 0 3rem;
+  text-align: center;
+}
+
+.icon {
+  font-size: 4rem;
+  margin: 0 1.2rem;
+}
+
+.rights {
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.logo {
+  margin-bottom: 4rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+
+  &__preview {
+    font-size: 2.2rem;
+    color: #ff825c;
+    font-weight: 800;
+  }
+
+  &__name {
+    font-size: 2.2rem;
+  }
+}

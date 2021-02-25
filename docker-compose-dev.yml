@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  ukrnafta-crm-frontend:
+    # ecr or local prebuilded image
+    image: '261222764291.dkr.ecr.eu-central-1.amazonaws.com/ukrnafta-crm-frontend:{{version}}'
+    container_name: 'ukrnafta-crm-frontend'
+    restart: unless-stopped
+    ports:
+      - 8080:80
+    logging:
+      driver: awslogs
+      options:
+        awslogs-region: eu-central-1
+        awslogs-group: ukrnafta-crm-frontend
+        awslogs-create-group: 'true'
+        tag: '{{.Name}}_{{ with split .ImageName ":" }}{{index . 1}}{{end}}_{{.ID}}'

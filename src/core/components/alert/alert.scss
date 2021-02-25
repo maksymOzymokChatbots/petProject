@@ -1,0 +1,42 @@
+@import 'core.scss';
+
+.alert {
+  @include flex();
+  z-index: 3;
+  width: 40rem;
+  max-width: calc(100% - 2.4rem);
+  padding: 1.6rem;
+  background: #ffffff;
+  border: 1px solid $blue;
+  border-radius: 1.2rem;
+}
+.icon {
+  margin-right: 0.8rem;
+  font-size: 2.4rem;
+  line-height: 2.7rem;
+}
+.closer {
+  margin-left: 0.8rem;
+  font-size: 2.4rem;
+  line-height: 2.7rem;
+  cursor: pointer;
+  &:before {
+    color: #000000;
+  }
+}
+.main {
+  width: 9.6rem;
+  flex-grow: 1;
+}
+.message {
+  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+  font-weight: bold;
+  line-height: 2.7rem;
+}
+.description {
+  @include roboto;
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+  letter-spacing: 0.01em;
+}

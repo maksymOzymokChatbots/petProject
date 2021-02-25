@@ -1,0 +1,283 @@
+@import './variables.scss';
+@import './media.scss';
+
+@mixin flex($justify: flex-start, $align: flex-start, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin abs-center {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin roboto {
+  font-family: 'Roboto';
+}
+
+@mixin flex($justify: flex-start, $align: flex-start, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin abs-center {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin min-size($size) {
+  min-width: $size;
+  min-height: $size;
+}
+
+@mixin max-size($size) {
+  max-width: $size;
+  max-height: $size;
+}
+
+@mixin padding-v($padding) {
+  padding-top: $padding;
+  padding-bottom: $padding;
+}
+
+@mixin error {
+  .error {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    transform: translateY(calc(100% + 1rem));
+    display: block;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: #bd3f3f;
+  }
+}
+
+@mixin icon($size, $color) {
+  font-size: $size;
+  color: $color;
+  & > *,
+  &::before,
+  &::after {
+    color: $color;
+  }
+}
+
+@mixin not-last-child() {
+  & > *:not(:last-child) {
+    @content;
+  }
+}
+
+@mixin last-child() {
+  & > *:last-child {
+    @content;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@mixin fade-in($time: 0.25s) {
+  animation: fade-in 0.25s linear;
+}
+
+@mixin vertical-padding($value) {
+  padding-top: $value;
+  padding-bottom: $value;
+}
+
+@mixin horizontal-margin($value) {
+  margin-left: $value;
+  margin-right: $value;
+}
+
+@mixin cross() {
+  position: relative;
+  transition: 0.25s;
+  &::after,
+  &::before {
+    content: ' ';
+    position: absolute;
+    transition: 0.25s;
+  }
+  &:before {
+    transform: translateX(-50%) rotate(45deg);
+  }
+  &:after {
+    transform: translateX(-50%) rotate(-45deg);
+  }
+}
+
+@mixin cross-params($color, $size, $width) {
+  @if ($size) {
+    @include size($size);
+  }
+  &::after,
+  &::before {
+    left: 50%;
+    @if ($width) {
+      width: $width;
+    }
+    @if ($size) {
+      height: $size;
+    }
+
+    @if ($color) {
+      background: $color;
+    }
+  }
+}
+
+@mixin arrow($box-size, $size, $thickness, $color) {
+  position: relative;
+
+  width: $size;
+  height: $size;
+
+  @include size($box-size);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+
+    width: $size;
+    height: $thickness;
+    background: $color;
+
+    transition: $transition;
+  }
+
+  &::before {
+    left: 50%;
+    transform: translate(-75%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    left: 50%;
+    transform: translate(-25%, -50%) rotate(-45deg);
+  }
+}
+
+@mixin arrow-color($color) {
+  &::before,
+  &::after {
+    background: $color;
+  }
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $primary;
+    border-radius: 100px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: $primary;
+  }
+}
+
+@mixin scrollbar-x($height: 5px) {
+  @include scrollbar();
+
+  &::-webkit-scrollbar {
+    height: $height;
+  }
+}
+
+@mixin scrollbar-y($width: 5px) {
+  @include scrollbar();
+
+  &::-webkit-scrollbar {
+    width: $width;
+  }
+}
+
+@mixin gradient-color($background, $fallback) {
+  color: $fallback;
+
+  @supports (-webkit-text-fill-color: transparent) {
+    background: $background;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@mixin hard-dimensions($width, $height) {
+  width: $width;
+  height: $height;
+
+  min-width: $width;
+  min-height: $height;
+
+  max-width: $width;
+  max-height: $height;
+}
+
+@mixin row($justify: flex-start) {
+  @include flex($justify, center);
+  @include not-last-child {
+    margin-right: $space;
+  }
+
+  flex-wrap: wrap;
+}
+
+@mixin clickable($color: $positive) {
+  transition: $transition;
+
+  cursor: pointer;
+
+  &:hover {
+    color: $color;
+  }
+}
+
+@mixin field-grid($columns) {
+  display: grid;
+
+  grid-template-columns: repeat($columns, 1fr);
+
+  column-gap: $space * 2;
+
+  row-gap: $field-gap-v;
+
+  align-items: flex-end;
+
+  & > * {
+    width: 100%;
+    min-width: 0;
+  }
+}

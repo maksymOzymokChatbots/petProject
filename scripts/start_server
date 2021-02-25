@@ -1,0 +1,6 @@
+#!/bin/bash
+cd /home/ubuntu/:FOLDER:
+aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 261222764291.dkr.ecr.eu-central-1.amazonaws.com
+docker-compose -f docker-compose-dev.yml pull
+docker-compose -f docker-compose-dev.yml up -d --force-recreate
+docker rmi $(docker images -aq) || true

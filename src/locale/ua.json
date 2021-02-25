@@ -1,0 +1,163 @@
+{
+  "yup": {
+    "mixed": {
+      "required": "{{ label }} обов'язкове поле",
+      "default": "${path} is invalid'",
+      "oneOf": "${path} must be one of the following values: ${values}",
+      "notOneOf": "${path} must not be one of the following values: ${values}"
+    },
+    "string": {
+      "length": "${path} must be exactly ${length} characters",
+      "min": "${path} must be at least ${min} characters",
+      "max": "${path} must be at most ${max} characters",
+      "matches": "${path} must match the following: ${regex}",
+      "email": "{{ label }} повинен бути коректного формату",
+      "url": "${path} must be a valid URL",
+      "trim": "${path} must be a trimmed string",
+      "lowercase": "${path} must be a lowercase string",
+      "uppercase": "${path} must be a upper case string"
+    },
+    "number": {
+      "min": "${path} must be greater than or equal to ${min}",
+      "max": "${path} must be less than or equal to ${max}",
+      "lessThan": "${path} must be less than ${less}",
+      "moreThan": "${path} must be greater than ${more}",
+      "notEqual": "${path} must be not equal to ${notEqual}",
+      "positive": "${path} must be a positive number",
+      "negative": "${path} must be a negative number",
+      "integer": "${path} must be an integer"
+    },
+    "date": {
+      "required": "${path} обов'язково поле",
+      "default": "${path} is invalid'",
+      "min": "${path} field must be later than ${min}",
+      "max": "${path} field must be at earlier than ${max}"
+    },
+    "array": {
+      "required": "${path} обов'язково поле",
+      "default": "${path} is invalid'",
+      "min": "${path} field must have at least ${min} items",
+      "max": "${path} field must have less than or equal to ${max} items"
+    }
+  },
+  "dictionary": {
+    "noResult": {
+      "addresses": "Ще жодної адреси не додано",
+      "contacts": "Ще жодного контакту не додано",
+      "attachments": "Ще жодного файлу не додано",
+      "connectedEntities": "Ще жодної пов'язаної особи не додано"
+    },
+    "role": {
+      "1": "Адмін",
+      "2": "Користувач"
+    },
+    "user": {
+      "status": {
+        "0": "Активний",
+        "1": "Відключений"
+      }
+    },
+    "company": {
+      "status": {
+        "0": "Активний",
+        "1": "Відключений",
+        "2": "Ліквідовано",
+        "3": "Банкрут"
+      }
+    },
+    "connectedEntity": {
+      "status": {
+        "0": "Активний",
+        "1": "Відключений"
+      }
+    },
+    "communication": {
+      "status": {
+        "0": "Очікують",
+        "1": "Виконані",
+        "2": "Прострочені"
+      },
+      "type": {
+        "CALL": "Дзвінок",
+        "MTNG": "Зустріч",
+        "birthday": "День народження"
+      }
+    },
+    "address": {
+      "status": {
+        "0": "Активний",
+        "1": "Відключений"
+      },
+      "type": {
+        "0": "Фактична",
+        "1": "Додаткова"
+      }
+    },
+
+    "attachment": {
+      "status": {
+        "0": "Активний",
+        "1": "Відключений"
+      },
+      "error": {
+        "file": {
+          "size": "Розмір файлу повинен бути не більше 10 Мб",
+          "type": "Невірний формат файлу, оберіть pdf, jpg, jpeg, png"
+        },
+        "image": {
+          "type": "Невірний формат файлу, оберіть jpg, jpeg, png"
+        }
+      }
+    },
+    "contact": {
+      "status": {
+        "0": "Активний",
+        "1": "Відключений"
+      },
+      "type": {
+        "0": "Телефон",
+        "1": "Вебсайт",
+        "2": "Email",
+        "3": "Аккаунт соцмережі"
+      }
+    }
+  },
+  "errors": {
+    "upload": "Не вдалося завантажити файл",
+    "access": "Немає доступу",
+    "template": "Шаблон не обраний"
+  },
+  "common": {
+    "noResults": "Немає результатів",
+    "months": {
+      "0": "січень",
+      "1": "лютий",
+      "2": "березень",
+      "3": "квітень",
+      "4": "травень",
+      "5": "червень",
+      "6": "липень",
+      "7": "серпень",
+      "8": "вересень",
+      "9": "жовтень",
+      "10": "листопад",
+      "11": "грудень"
+    },
+    "days": {
+      "0": "неділя",
+      "1": "понеділок",
+      "2": "вівторок",
+      "3": "середа",
+      "4": "четвер",
+      "5": "п’ятниця",
+      "6": "субота"
+    }
+  },
+
+  "shared": {
+    "actions": {
+      "close": "Закрити",
+      "save": "Зберегти"
+    }
+  }
+}
